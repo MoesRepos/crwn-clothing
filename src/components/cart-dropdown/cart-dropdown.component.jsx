@@ -1,13 +1,19 @@
-import '/Users/mh/crwn-clothing/src/components/cart-dropdown/cart-dropdown-styles.scss'
-import Button from '/Users/mh/crwn-clothing/src/components/button/button.component.jsx'
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/cart.context';
+import './cart-dropdown.styles.scss'
+import Button from '../button/button.component.jsx'
+import CartItem from '../cart-item/cart-item.component'
 
 const CartDropdown = () => {
+    const {cartItems} = useContext(CartContext);
+
+
     return (
         <div className='cart-dropdown-container'>
             <div className='cart-items'>
-                <Button>Go To Checkout</Button>
+                {cartItems.map((item) => (<CartItem key= {item.id} cartItem={item}/>))}
             </div>
-
+            <Button>Go To Checkout</Button>
         </div>
     )
 }

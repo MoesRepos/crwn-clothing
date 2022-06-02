@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import Directory from '/Users/mh/crwn-clothing/src/components/directory/directory.component.jsx';
+import Directory from '../../directory/directory.component.jsx';
 
 const Home = () => {
   const categories = [
